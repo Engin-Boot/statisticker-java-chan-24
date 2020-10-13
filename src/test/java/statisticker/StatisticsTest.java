@@ -27,10 +27,12 @@ public class StatisticsTest
     @Test
     public void reportsNaNForEmptyInput()
     {
-        List<___> emptyList = new ArrayList<___>();
+        List<Float> emptyList = new ArrayList<Float>();
 
         Statistics.Stats s = Statistics.getStatistics(emptyList);
-
+        assertEquals(s.min.isNaN(),true);
+        assertEquals(s.max.isNaN(),true);
+        assertEquals(s.average.isNaN(),true);
         //All fields of computedStats (average, max, min) must be
         //Float.NaN (not-a-number), as described in
         //https://www.geeksforgeeks.org/nan-not-number-java/
